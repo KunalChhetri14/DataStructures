@@ -1,0 +1,30 @@
+<html>
+
+<script>
+  var x=1;
+  func1();
+  func2();
+  var currentThis = this;
+
+  function func1() {
+    var x=10;
+    var func1This = this;
+    console.log("this ", this.x);
+    if(currentThis === func1This) {
+      console.log("Both are same");
+    }
+    console.log(x*x);
+    console.log(this);
+  }
+
+  function func2() {
+    var x=20;
+    console.log(x*x);
+  }
+
+</script>
+
+<body>
+<h1>Functions</h1>
+</body>
+</html>
