@@ -1,5 +1,8 @@
 package ArrayList.SortingAlgorithms;
 
+//Loop and place the largest element at the last array
+//Repeat until all the elements are sorted
+
 public class BubbleSort {
 
   public int[] bubbleSort(int [] nos) {

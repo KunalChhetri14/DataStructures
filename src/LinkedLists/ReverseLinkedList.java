@@ -3,6 +3,24 @@ package LinkedLists;
 
 public class ReverseLinkedList {
 
+
+  public ListNode reverseList(ListNode head) {
+
+    ListNode prev = null;
+    ListNode current = head;
+    ListNode next = head.next;
+
+    while(current != null) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+
+    return prev;
+
+  }
+
   public ListNode reverseListRecursion(ListNode head) {
 //    System.out.println("Data is "+ head.val +  "  ,,,"+head.next);
     if(head.next == null) {
@@ -20,6 +38,21 @@ public class ReverseLinkedList {
     return headNode;
   }
 
+  public ListNode reverseLinkedListPractise(ListNode head) {
+    ListNode currentNode = head;
+    ListNode nextNode = currentNode.next;
+
+    if(head.next == null) {
+      return head;
+    } else {
+      ListNode headElement = reverseLinkedListPractise(head.next);
+      currentNode.next = null;
+      nextNode.next = currentNode;
+      return headElement;
+    }
+
+  }
+
 
   public static void main(String args[]) {
 
@@ -32,8 +65,10 @@ public class ReverseLinkedList {
     temp1.next = new ListNode(5);
     new ListNode().traverseLL(head1);
 
-    ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
-    ListNode revHead = reverseLinkedList.reverseListRecursion(head1);
+//    ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
+//    ListNode revHead = reverseLinkedList.reverseLinkedListPractise(head1);
+    ReverseLinkedList rev = new ReverseLinkedList();
+    ListNode revHead = rev.reverseList(head1);
 
     new ListNode().traverseLL(revHead);
 

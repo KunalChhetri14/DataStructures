@@ -55,6 +55,23 @@ function showOrderSummary(paymentId) {
   })
 }
 
+const updated =updatedWallerBalance(1);
+updated.then(item => {
+  console.log(item.message);
+}, err => {
+  console.log("Error is :  ", item.message);
+})
+
+function updatedWallerBalance(user_id) {
+  return new Promise(function(resolve, reject) {
+    if(false) {
+      resolve({message: "Updated Balance"});
+    } else {
+      reject({message: "Error in updating"});
+    }
+  })
+}
+
 function updateWallet(user_id) {
   return new Promise(function(resolve, reject) {
     if(true) {
