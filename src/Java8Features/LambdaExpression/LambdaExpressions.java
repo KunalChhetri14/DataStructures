@@ -31,6 +31,10 @@ interface fnInterface3 {
   public void sq(int a);
 }
 
+interface fnInterface4 {
+  public int squareRoot(int a);
+}
+
 public class LambdaExpressions {
 
 
@@ -40,6 +44,9 @@ public class LambdaExpressions {
     fn.m1();
     fnInterface2 fn2 = (a,b) -> System.out.println(a+b);
     fn2.sum(2,20);
+    fnInterface4 fn4 = a -> (int) Math.sqrt(a);
+    int sqRoot = fn4.squareRoot(16);
+    System.out.println("The sq root is :: "+ sqRoot);
 //    fnInterface3 fn3 = (a,b) -> System.out.println("Inside fn3:: "+ a+b); Gives error
 
     //functional interface should only have on abstract methods as the compiler will get confused when multiple methods are there
